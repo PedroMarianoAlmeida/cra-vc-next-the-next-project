@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import ThemeRegistry from "../../theme/ThemeRegistry";
+import PersistentDrawerLeft from "@/app/components/Drawer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThemeRegistry>
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <PersistentDrawerLeft>{children}</PersistentDrawerLeft>
+        </body>
       </ThemeRegistry>
     </html>
   );
